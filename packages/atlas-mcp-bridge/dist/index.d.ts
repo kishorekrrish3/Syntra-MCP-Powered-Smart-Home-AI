@@ -1,7 +1,7 @@
 /**
  * @file index.ts
- * @package @argon/mcp-iot-bridge
- * @description Main entrypoint for @argon/mcp-iot-bridge package.
+ * @package @atlas/mcp-iot-bridge
+ * @description Main entrypoint for @atlas/mcp-iot-bridge package in SYNTRA.
  */
 export * from './types';
 export * from './validator';

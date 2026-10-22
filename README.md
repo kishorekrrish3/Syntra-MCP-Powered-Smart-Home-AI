@@ -1,14 +1,14 @@
-# OmniGuard — Context-Aware Home Guardian, powered by Argon-MCP
+# SYNTRA: MCP-Powered Smart Home AI — Powered by ATLAS-MCP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20%7C%202025--11--25-emerald.svg)](https://modelcontextprotocol.io)
+[![ATLAS-MCP](https://img.shields.io/badge/ATLAS--MCP-2024--11--05%20%7C%202025--11--25-cyan.svg)](https://modelcontextprotocol.io)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.18-black.svg)](https://nextjs.org)
 [![AWS Bedrock](https://img.shields.io/badge/AWS-Bedrock%20%7C%20S3-orange.svg)](https://aws.amazon.com/bedrock)
-[![Tests](https://img.shields.io/badge/Tests-19%20Passing-success.svg)](#testing-and-acceptance-criteria)
+[![Tests](https://img.shields.io/badge/Tests-19%20Passing-success.svg)](#11-testing--verification-evidence)
 
-> *“Your home doesn’t just detect events. It understands what matters.”*
+> *“Your Home. One Intelligent Network.”*
 
-Built for the **Build, Ship, Shape: Amazon Developer Hackathon**, OmniGuard unifies the core Amazon developer ecosystem—**Alexa+**, **Ring**, **Fire TV**, and **AWS Cloud (Bedrock + S3)**—into a cohesive, agentic smart-home guardian powered by the open **Model Context Protocol (MCP)**.
+Built for the **Build, Ship, Shape: Amazon Developer Hackathon**, **SYNTRA** unifies the Amazon developer ecosystem—**Alexa+**, **Ring**, **Fire TV**, and **AWS Cloud (Bedrock + S3)**—into a cohesive, context-aware smart-home artificial intelligence powered by the open **Model Context Protocol (ATLAS-MCP)**.
 
 ---
 
@@ -19,7 +19,7 @@ Built for the **Build, Ship, Shape: Amazon Developer Hackathon**, OmniGuard unif
 3. [System Architecture](#3-system-architecture)
 4. [Primary Hackathon Tracks & Challenges](#4-primary-hackathon-tracks--challenges)
 5. [Monorepo & Package Structure](#5-monorepo--package-structure)
-6. [Reusable Open Source Package (`@argon/mcp-iot-bridge`)](#6-reusable-open-source-package-argonmcp-iot-bridge)
+6. [Reusable Open Source Package (`@atlas/mcp-iot-bridge`)](#6-reusable-open-source-package-atlasmcp-iot-bridge)
 7. [Installation & Configuration](#7-installation--configuration)
 8. [Running the Application](#8-running-the-application)
 9. [MCP Server Specification & Endpoints](#9-mcp-server-specification--endpoints)
@@ -38,10 +38,10 @@ Built for the **Build, Ship, Shape: Amazon Developer Hackathon**, OmniGuard unif
 
 Smart home systems typically flood users with low-context notifications: *"Motion detected at Front Door"* or *"Person spotted on Porch"*. Homeowners are forced to unlock their phones, launch separate camera apps, cross-reference calendar entries, and decipher whether an alert warrants an immediate interruption.
 
-**OmniGuard** replaces disconnected notifications with **context-aware event prioritization across devices**:
+**SYNTRA** replaces disconnected notifications with **context-aware event prioritization across devices**:
 - Ingests edge events from Ring doorbells and security cameras.
-- Normalizes disparate telemetry into standard **Model Context Protocol (MCP)** resources via our standalone `@argon/mcp-iot-bridge` package.
-- Correlates detections with personal context (e.g. timestamped wearable voice notes, prescription reminders, family arrival schedules).
+- Normalizes disparate telemetry into standard **Model Context Protocol (MCP)** resources via our standalone `@atlas/mcp-iot-bridge` package.
+- Correlates detections with personal context (e.g. timestamped wearable voice notes from Bee, prescription reminders, family arrival schedules).
 - Uses AWS Bedrock generative reasoning to assess situational urgency and uncertainty.
 - Selectively interrupts living-room entertainment on **Fire TV** with high-contrast, remote-navigable Picture-in-Picture cards when an event truly matters.
 - Records every decision, tool call, and S3 tamper-evident archive in an inspectable timeline.
@@ -52,8 +52,8 @@ Smart home systems typically flood users with low-context notifications: *"Motio
 
 Consider an everyday scenario:
 A resident is watching a 4K movie on Fire TV. Outside, a courier delivers a damaged parcel on the porch.
-- **Without OmniGuard**: The doorbell sends a generic motion ping. The resident ignores it to finish the movie. Hours later, the temperature-sensitive insulin prescription inside the crushed box has expired in the afternoon heat.
-- **With OmniGuard**: The edge detection is correlated against a resident wearable voice note (*"Rapid-acting insulin arriving 2–4 PM, keep cool"*). OmniGuard assesses the situation as **EMERGENCY**, pauses the movie, pushes a Picture-in-Picture card to Fire TV, broadcasts an automated two-way audio message (*"Please wait, resident is coming to the door"*), and archives the incident record to Amazon S3.
+- **Without SYNTRA**: The doorbell sends a generic motion ping. The resident ignores it to finish the movie. Hours later, the temperature-sensitive insulin prescription inside the crushed box has expired in the afternoon heat.
+- **With SYNTRA**: The edge detection is correlated against a resident wearable voice note (*"Rapid-acting insulin arriving 2–4 PM, keep cool"*). SYNTRA assesses the situation as **EMERGENCY**, pauses the movie, pushes a Picture-in-Picture card to Fire TV, broadcasts an automated two-way audio message (*"Please wait, resident is coming to the door"*), and archives the incident record to Amazon S3.
 
 ---
 
@@ -67,7 +67,7 @@ A resident is watching a 4K movie on Fire TV. Outside, a courier delivers a dama
                             │ Raw IoT JSON Payload
                             ▼
  ┌────────────────────────────────────────────────────────┐
- │        @argon/mcp-iot-bridge (Standalone Package)      │
+ │        @atlas/mcp-iot-bridge (Standalone Package)      │
  │   • Input Validation & Type Safety                     │
  │   • Canonical Normalization (NormalizedIoTEvent)       │
  │   • MCP Resource Generator (toMcpResource)             │
@@ -82,7 +82,7 @@ A resident is watching a 4K movie on Fire TV. Outside, a courier delivers a dama
                             │ Urgency Assessment & Evidence
                             ▼
  ┌────────────────────────────────────────────────────────┐
- │         MODEL CONTEXT PROTOCOL (MCP) SERVER            │
+ │         ATLAS-MCP SERVER ENGINE                        │
  │             (/api/mcp Streamable HTTP)                 │
  │   • Tools: ring_telemetry, hardware_actions,           │
  │            firetv_pip, context_search, aws_archive     │
@@ -99,39 +99,41 @@ A resident is watching a 4K movie on Fire TV. Outside, a courier delivers a dama
  └───────────────────────────┘  └─────────────────────────┘
 ```
 
+An interactive vector presentation slide of this architecture is hosted directly at [`/diagram`](http://localhost:3000/diagram).
+
 ---
 
 ## 4. Primary Hackathon Tracks & Challenges
 
-| Hackathon Dimension | OmniGuard Implementation & Verification |
+| Hackathon Dimension | SYNTRA Implementation & Verification |
 |---|---|
-| **Track A: Alexa+** | Implemented self-hosted MCP server with Streamable HTTP transport, JSON-RPC 2.0 protocol negotiation, 6 schema-validated tools, 4 resources, 2 prompts, and live Protocol Inspector. |
+| **Track A: Alexa+** | Implemented self-hosted ATLAS-MCP server with Streamable HTTP transport, JSON-RPC 2.0 protocol negotiation, 6 schema-validated tools, 4 resources, 2 prompts, and live Protocol Inspector. |
 | **Track B: Ring** | High-fidelity edge simulator with synthetic canvas rendering, bounding boxes, damage indicators, ambient lux calculation, and hardware state control. |
 | **Track C: Fire TV** | Dedicated `/firetv` route with 16:9 cinematic styling, D-pad keyboard remote navigation (Arrow/Enter/Esc), contextual PiP cards, and server-backed shared state. |
 | **Track D: Bee Wearable** | Ingestion interface for timestamped wearable voice notes with provenance tags, dynamic memory injection, and semantic correlation. |
 | **AWS Builder Mini Challenge** | Integrated `@aws-sdk/client-bedrock-runtime` and `@aws-sdk/client-s3` with automatic dual execution: real cloud API calls or deterministic local reasoning. |
-| **Open Source Mini Challenge** | Reusable MIT package `@argon/mcp-iot-bridge` in `packages/argon-mcp-bridge` with independent tests and documentation. |
+| **Open Source Mini Challenge** | Reusable MIT package `@atlas/mcp-iot-bridge` in `packages/atlas-mcp-bridge` with independent tests and documentation. |
 
 ---
 
 ## 5. Monorepo & Package Structure
 
 ```text
-omniguard-argon-mcp/
+syntra-atlas-mcp/
 ├── LICENSE                               # Root MIT License
 ├── README.md                             # Comprehensive submission documentation
 ├── .env.example                          # Environment variable template
 ├── package.json                          # Root npm workspaces configuration
 ├── tsconfig.json                         # Strict TypeScript configuration
 ├── next.config.mjs                       # Next.js App Router configuration
-├── tailwind.config.js                    # Amazon-tailored styling system
+├── tailwind.config.js                    # Amazon Global UI design tokens
 ├── postcss.config.js                     # PostCSS config
 ├── vitest.config.ts                      # Vitest test runner configuration
 ├── packages/
-│   └── argon-mcp-bridge/                 # Open Source Mini Challenge package
+│   └── atlas-mcp-bridge/                 # Open Source Mini Challenge package
 │       ├── LICENSE                       # MIT License
 │       ├── README.md                     # Package documentation & API examples
-│       ├── package.json                  # @argon/mcp-iot-bridge package definition
+│       ├── package.json                  # @atlas/mcp-iot-bridge package definition
 │       ├── tsconfig.json                 # Independent TypeScript configuration
 │       ├── vitest.config.ts              # Package test runner config
 │       ├── src/
@@ -143,9 +145,11 @@ omniguard-argon-mcp/
 │           └── bridge.test.ts            # 7 standalone unit tests
 ├── src/
 │   ├── types/
-│   │   └── omniguard.ts                  # Shared application typings
+│   │   ├── syntra.ts                     # Canonical SYNTRA global state & event typings
+│   │   └── omniguard.ts                  # Backward-compatibility alias export
 │   ├── lib/
-│   │   ├── argon-bridge.ts               # Bridge service adapter
+│   │   ├── atlas-bridge.ts               # Bridge service adapter
+│   │   ├── argon-bridge.ts               # Backward-compatibility alias adapter
 │   │   ├── context-provider.ts           # Personal context memory provider
 │   │   ├── ring-provider.ts              # Ring simulator & hardware safety gate
 │   │   ├── aws-cloud-engine.ts           # Bedrock & S3 dual-mode engine
@@ -161,11 +165,13 @@ omniguard-argon-mcp/
 │   │   ├── FireTvMiniPreview.tsx         # Live Fire TV sync preview on dashboard
 │   │   └── SubmissionDocsModal.tsx       # In-app interactive rubric & friction log
 │   └── app/
-│       ├── layout.tsx                    # Dark guardian root layout
-│       ├── globals.css                   # Tailwind styles & remote focus halos
+│       ├── layout.tsx                    # Root layout with SYNTRA metadata
+│       ├── globals.css                   # Global styles & remote focus halos
 │       ├── page.tsx                      # Mission Control Dashboard
+│       ├── diagram/
+│       │   └── page.tsx                  # 16:9 Architecture vector slide (/diagram)
 │       ├── firetv/
-│       │   └── page.tsx                  # Dedicated 16:9 Fire TV remote experience
+│       │   └── page.tsx                  # Dedicated 16:9 Fire TV remote experience (/firetv)
 │       └── api/
 │           ├── mcp/route.ts              # Streamable HTTP MCP endpoint
 │           ├── ring-webhook/route.ts     # Ring edge event ingestion webhook
@@ -179,9 +185,9 @@ omniguard-argon-mcp/
 
 ---
 
-## 6. Reusable Open Source Package (`@argon/mcp-iot-bridge`)
+## 6. Reusable Open Source Package (`@atlas/mcp-iot-bridge`)
 
-Located in [`packages/argon-mcp-bridge`](packages/argon-mcp-bridge), this package is an independent, MIT-licensed TypeScript library that standardizes IoT edge payloads into Model Context Protocol resources:
+Located in [`packages/atlas-mcp-bridge`](packages/atlas-mcp-bridge), this package is an independent, MIT-licensed TypeScript library that standardizes IoT edge payloads into Model Context Protocol resources:
 
 ```typescript
 import {
@@ -189,7 +195,7 @@ import {
   normalizeIoTEvent,
   toMcpResource,
   correlateWithContext,
-} from '@argon/mcp-iot-bridge';
+} from '@atlas/mcp-iot-bridge';
 
 // Ingest and validate raw edge payload
 const validation = validateIoTEvent(rawPayload);
@@ -199,7 +205,7 @@ const normalized = normalizeIoTEvent(rawPayload);
 
 // Export as an official MCP Resource
 const mcpResource = toMcpResource(normalized);
-// -> uri: "omniguard://frontdoor/events/evt-101"
+// -> uri: "syntra://frontdoor/events/del-101"
 
 // Correlate with resident wearable memories
 const urgency = correlateWithContext(normalized, residentMemories);
@@ -218,8 +224,9 @@ const urgency = correlateWithContext(normalized, residentMemories);
 ### 1. Clone & Install Dependencies
 ```bash
 git clone <repository-url>
-cd omniguard-argon-mcp
+cd syntra-atlas-mcp
 npm install
+npm run build:bridge
 ```
 
 ### 2. Configure Environment Variables
@@ -234,9 +241,9 @@ AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key
 AWS_SECRET_ACCESS_KEY=your_aws_secret_key
 AWS_BEDROCK_MODEL_ID=anthropic.claude-3-5-sonnet-20241022-v2:0
-AWS_S3_INCIDENT_BUCKET=omniguard-incident-archives
+AWS_S3_INCIDENT_BUCKET=syntra-incident-archives
 ```
-*Note: If AWS credentials are left empty, OmniGuard automatically runs in high-fidelity **Deterministic Simulation Mode**.*
+*Note: If AWS credentials are left empty, SYNTRA automatically runs in high-fidelity **Deterministic Simulation Mode**.*
 
 ---
 
@@ -247,7 +254,8 @@ AWS_S3_INCIDENT_BUCKET=omniguard-incident-archives
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) for **Mission Control Dashboard**.  
-Open [http://localhost:3000/firetv](http://localhost:3000/firetv) for **Fire TV Living-Room Display**.
+Open [http://localhost:3000/firetv](http://localhost:3000/firetv) for **Fire TV Living-Room Display**.  
+Open [http://localhost:3000/diagram](http://localhost:3000/diagram) for **System Architecture Presentation Slide**.
 
 ### Production Build & Run
 ```bash
@@ -259,10 +267,11 @@ npm run start
 
 ## 9. MCP Server Specification & Endpoints
 
-OmniGuard exposes its Model Context Protocol server at `POST /api/mcp` and `GET /api/mcp` (Streamable HTTP):
+SYNTRA exposes its Model Context Protocol server at `POST /api/mcp` and `GET /api/mcp` (Streamable HTTP):
 
 ### MCP Capabilities
-- Protocol Version: `2024-11-05` / `2025-11-25`
+- Server Name: `syntra-atlas-mcp`
+- Protocol Version: `2024-11-05`
 - Transport: Streamable HTTP (`text/event-stream` / JSON-RPC 2.0)
 
 ### Available MCP Tools
@@ -311,7 +320,7 @@ curl -X POST http://localhost:3000/api/mcp \
     "id": "req-3",
     "method": "resources/read",
     "params": {
-      "uri": "omniguard://frontdoor/telemetry"
+      "uri": "syntra://frontdoor/telemetry"
     }
   }'
 ```
@@ -324,7 +333,7 @@ The dashboard includes 4 deterministic, zero-fail demo scenarios:
 
 ### Scenario 1: Temperature-Sensitive Medical Delivery Triage
 1. **Trigger**: Courier drops a parcel with visible crushed box damage.
-2. **Context Correlation**: OmniGuard cross-references against a Bee Wearable note stating temperature-sensitive insulin was shipped today.
+2. **Context Correlation**: SYNTRA cross-references against a Bee Wearable note stating temperature-sensitive insulin was shipped today.
 3. **Assessment**: Urgency elevated to **EMERGENCY**.
 4. **Living-Room Interruption**: Fire TV movie automatically pauses; PiP card slides in with damage highlight and evidence breakdown.
 5. **Action**: Resident triggers two-way audio to hold courier.
@@ -359,15 +368,13 @@ npm run test
 ```text
  RUN  v2.1.9 D:/ACADEMICS/PROJECTS/AMAZON DEVELOPER HACKATHON
 
- ✓ packages/argon-mcp-bridge/test/bridge.test.ts (7 tests) 7ms
- ✓ tests/aws-cloud-engine.test.ts (2 tests) 5ms
- ✓ tests/mcp-server.test.ts (6 tests) 12ms
- ✓ tests/event-engine.test.ts (4 tests) 21ms
+ ✓ packages/atlas-mcp-bridge/test/bridge.test.ts (7 tests) 94ms
+ ✓ tests/aws-cloud-engine.test.ts (2 tests) 169ms
+ ✓ tests/mcp-server.test.ts (6 tests) 295ms
+ ✓ tests/event-engine.test.ts (4 tests) 478ms
 
  Test Files  4 passed (4)
       Tests  19 passed (19)
-   Start at  21:07:21
-   Duration  786ms
 ```
 
 ### TypeScript Typecheck & Production Build Verification
@@ -380,11 +387,11 @@ npm run build       # Next.js compiled successfully, all routes prerendered
 
 ## 12. AWS Cloud Integration: Real vs. Simulated Mode
 
-OmniGuard implements a transparent **dual-mode engine** in `src/lib/aws-cloud-engine.ts`:
+SYNTRA implements a transparent **dual-mode engine** in `src/lib/aws-cloud-engine.ts`:
 
 - **Real AWS Bedrock**: When credentials exist, constructs messages format for `anthropic.claude-3-5-sonnet-20241022-v2:0`, invokes Bedrock runtime, and records actual latency and request IDs.
 - **Real Amazon S3**: Serializes incident metadata and executes `PutObjectCommand` to the configured S3 bucket.
-- **High-Fidelity Simulation Mode**: When offline or credentials are not supplied, provides deterministic local reasoning and simulated S3 URIs (e.g. `s3://omniguard-incident-archives/2026/10/20/...`), with `isSimulated: true` explicitly tagged in all UI badges, protocol logs, and API payloads.
+- **High-Fidelity Simulation Mode**: When offline or credentials are not supplied, provides deterministic local reasoning and simulated S3 URIs (e.g. `s3://syntra-incident-archives/2026/10/20/...`), with `isSimulated: true` explicitly tagged in all UI badges, protocol logs, and API payloads.
 
 ---
 
@@ -442,28 +449,28 @@ As requested by hackathon guidelines, here are three genuine architectural hurdl
 ## 16. Three-Minute Video Pitch Script
 
 - **0:00–0:20 (Problem)**: Show resident watching a movie on Fire TV. Highlight how modern smart homes send hundreds of low-context alerts that get ignored.
-- **0:20–0:55 (Trigger & Context)**: Courier arrives with damaged package. Ring simulator fires event. OmniGuard retrieves Bee Wearable note regarding urgent insulin prescription.
-- **0:55–1:35 (MCP Intelligence Trace)**: Open Mission Control dashboard. Show live Protocol Inspector executing `ring_get_live_telemetry`, `context_search_memories`, and Bedrock AI inference.
+- **0:20–0:55 (Trigger & Context)**: Courier arrives with damaged package. Ring simulator fires event. SYNTRA retrieves Bee Wearable note regarding urgent insulin prescription.
+- **0:55–1:35 (ATLAS-MCP Intelligence Trace)**: Open Mission Control dashboard. Show live Protocol Inspector executing `ring_get_live_telemetry`, `context_search_memories`, and Bedrock AI inference.
 - **1:35–2:15 (Fire TV Experience)**: Switch to `/firetv`. Movie pauses; Picture-in-Picture card slides in. Demonstrate D-Pad remote navigation: selecting "Hold Courier" to broadcast two-way audio.
-- **2:15–2:40 (Technical Proof)**: Highlight 19 passing tests, `@argon/mcp-iot-bridge` open-source package, and verified S3 incident archive URI.
-- **2:40–3:00 (Conclusion)**: Summary of consumer impact: OmniGuard ensures your home doesn't just detect events—it understands what matters.
+- **2:15–2:40 (Technical Proof)**: Highlight 19 passing tests, `@atlas/mcp-iot-bridge` open-source package, and verified S3 incident archive URI.
+- **2:40–3:00 (Conclusion)**: Summary of consumer impact: SYNTRA ensures that your home doesn't just detect events—it understands what matters. Your Home. One Intelligent Network.
 
 ---
 
 ## 17. Devpost Submission Text
 
 ### Project Title
-**OmniGuard — Context-Aware Home Guardian, powered by Argon-MCP**
+**SYNTRA: MCP-Powered Smart Home AI**
 
 ### Short Tagline
-*Your home doesn't just detect events. It understands what matters.*
+*Your Home. One Intelligent Network.*
 
 ### Inspiration
-Today's smart homes are noisy and fragmented. When a delivery arrives or motion is detected, our devices spam our phones with generic alerts. But whether that alert matters depends entirely on context: Is that crushed package a generic cardboard box, or a temperature-sensitive prescription the resident needs immediately? We built OmniGuard to connect front-door edge sensors, personal wearable context, living-room entertainment, and generative cloud AI into a unified guardian.
+Today's smart homes are noisy and fragmented. When a delivery arrives or motion is detected, our devices spam our phones with generic alerts. But whether that alert matters depends entirely on context: Is that crushed package a generic cardboard box, or a temperature-sensitive prescription the resident needs immediately? We built SYNTRA powered by ATLAS-MCP to connect front-door edge sensors, personal wearable context, living-room entertainment, and generative cloud AI into a unified intelligent network.
 
 ### What It Does
 When an edge event occurs at the front door:
-1. **Ingests & Validates**: Standardizes the event using our open-source `@argon/mcp-iot-bridge` library.
+1. **Ingests & Validates**: Standardizes the event using our open-source `@atlas/mcp-iot-bridge` library.
 2. **Context Correlation**: Retrieves timestamped personal notes (e.g. Bee Wearable memos, doctor prescription reminders, visitor drop-offs).
 3. **Agentic Reasoning**: Dispatches MCP tools to evaluate urgency and uncertainty using Amazon Bedrock.
 4. **Living-Room Interruption**: If urgent, pauses media playback on Fire TV and pushes a high-contrast Picture-in-Picture card with remote-navigable response actions.
@@ -479,12 +486,12 @@ When an edge event occurs at the front door:
 ### Accomplishments That We're Proud Of
 - 100% test pass rate across 4 independent test suites.
 - Fully working, reproducible end-to-end scenarios.
-- Standalone MIT-licensed open-source package (`@argon/mcp-iot-bridge`).
+- Standalone MIT-licensed open-source package (`@atlas/mcp-iot-bridge`).
 - Zero console errors and zero broken links.
 
 ---
 
 ## License
 
-MIT © 2026 OmniGuard Contributors & Argon Team
+MIT © 2026 SYNTRA Contributors & ATLAS-MCP Team  
 Amazon Developer Hackathon: Build, Ship, Shape

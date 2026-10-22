@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { OmniGuardGlobalState } from '@/types/omniguard';
+import { SyntraGlobalState } from '@/types/syntra';
 import {
   Send,
   Wrench,
@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 interface AlexaSimulatorPanelProps {
-  state: OmniGuardGlobalState;
+  state: SyntraGlobalState;
   onRefresh: () => void;
 }
 
@@ -67,7 +67,7 @@ export const AlexaSimulatorPanel: React.FC<AlexaSimulatorPanelProps> = ({ state,
             ALEXA+
           </span>
           <span className="text-amazon-text_main font-bold text-xs tracking-tight">
-            Alexa+ Home Guardian Console
+            SYNTRA Alexa+ Guardian Console
           </span>
         </div>
 
@@ -95,7 +95,7 @@ export const AlexaSimulatorPanel: React.FC<AlexaSimulatorPanelProps> = ({ state,
             >
               <div className="flex items-center justify-between mb-1 opacity-75 text-[10px]">
                 <span className="font-bold uppercase tracking-wider">
-                  {msg.sender === 'user' ? 'Resident' : 'Alexa+ Guardian'}
+                  {msg.sender === 'user' ? 'Resident' : 'SYNTRA Alexa+ Guardian'}
                 </span>
                 <span className="font-mono">{new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
               </div>

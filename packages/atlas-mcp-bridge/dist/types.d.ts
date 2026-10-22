@@ -1,7 +1,7 @@
 /**
  * @file types.ts
- * @package @argon/mcp-iot-bridge
- * @description Standard type definitions for IoT edge normalization and MCP bridging.
+ * @package @atlas/mcp-iot-bridge
+ * @description Standard type definitions for IoT edge normalization and ATLAS-MCP bridging in SYNTRA.
  */
 export type IoTDeviceType = 'ring_doorbell' | 'ring_camera' | 'smart_lock' | 'floodlight' | 'motion_sensor' | 'custom_iot';
 export type IoTEventType = 'motion' | 'visitor' | 'delivery' | 'package_anomaly' | 'trusted_visitor' | 'lock_state' | 'light_state' | 'alarm_state';

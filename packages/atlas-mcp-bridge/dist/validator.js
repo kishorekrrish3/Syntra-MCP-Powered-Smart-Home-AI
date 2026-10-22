@@ -1,8 +1,8 @@
 "use strict";
 /**
  * @file validator.ts
- * @package @argon/mcp-iot-bridge
- * @description Input validation for IoT events prior to MCP bridging.
+ * @package @atlas/mcp-iot-bridge
+ * @description Input validation for IoT events prior to ATLAS-MCP bridging in SYNTRA.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateIoTEvent = validateIoTEvent;

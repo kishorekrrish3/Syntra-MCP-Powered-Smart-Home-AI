@@ -1,7 +1,7 @@
 /**
  * @file validator.ts
- * @package @argon/mcp-iot-bridge
- * @description Input validation for IoT events prior to MCP bridging.
+ * @package @atlas/mcp-iot-bridge
+ * @description Input validation for IoT events prior to ATLAS-MCP bridging in SYNTRA.
  */
 import { RawIoTEvent, ValidationResult } from './types';
 export declare function validateIoTEvent(event: unknown): ValidationResult<RawIoTEvent>;

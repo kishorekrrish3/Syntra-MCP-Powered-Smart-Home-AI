@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { NormalizedIoTEvent, HardwareState } from '@/types/omniguard';
+import { NormalizedIoTEvent, HardwareState } from '@/types/syntra';
 import {
   Video,
   Sun,
@@ -270,8 +270,8 @@ export const CameraCanvas: React.FC<CameraCanvasProps> = ({ currentEvent, hardwa
         {/* Simulation Indicator Tag */}
         <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-0.5 rounded-[2px] text-[10px] font-mono text-gray-300 border border-white/10">
           STATUS:{' '}
-          <span className="text-amazon-accent_amber font-bold">
-            {currentEvent?.source.isSimulated ? 'SYNTHETIC EDGE CANVAS' : 'PHYSICAL HARDWARE'}
+          <span className="text-cyan-400 font-bold">
+            {currentEvent?.source.isSimulated ? 'ATLAS-MCP SYNTHETIC CANVAS' : 'PHYSICAL HARDWARE'}
           </span>
         </div>
 
@@ -298,7 +298,7 @@ export const CameraCanvas: React.FC<CameraCanvasProps> = ({ currentEvent, hardwa
       {showPayloadModal && (
         <div className="p-3 bg-amazon-background_light border-t border-amazon-border_subtle font-mono text-xs">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-amazon-text_main font-bold">Ring Edge Event Payload (Normalized JSON)</span>
+            <span className="text-amazon-text_main font-bold">Ring Edge Event Payload (ATLAS-MCP Normalized JSON)</span>
             <button
               onClick={() => setShowPayloadModal(false)}
               className="text-amazon-link_blue hover:underline text-[11px]"

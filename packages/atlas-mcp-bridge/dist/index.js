@@ -1,8 +1,8 @@
 "use strict";
 /**
  * @file index.ts
- * @package @argon/mcp-iot-bridge
- * @description Main entrypoint for @argon/mcp-iot-bridge package.
+ * @package @atlas/mcp-iot-bridge
+ * @description Main entrypoint for @atlas/mcp-iot-bridge package in SYNTRA.
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;

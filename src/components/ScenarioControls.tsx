@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ScenarioId } from '@/types/omniguard';
+import { ScenarioId } from '@/types/syntra';
 import {
   PackageCheck,
   ShieldAlert,
@@ -83,7 +83,7 @@ export const ScenarioControls: React.FC<ScenarioControlsProps> = ({
       <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-amazon-border_subtle">
         <div className="flex items-center space-x-2">
           <span className="text-xs font-bold text-amazon-text_main">
-            Simulated Edge Scenarios (Discovery & Testing)
+            SYNTRA Edge Scenarios (Discovery & Testing)
           </span>
           <span className="bg-amazon-accent_amber text-amazon-primary_ink font-bold text-[10px] px-1.5 py-0.5 rounded-[2px]">
             E2E WORKFLOWS

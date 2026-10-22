@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ProtocolLogEntry, AwsCloudState } from '@/types/omniguard';
+import { ProtocolLogEntry, AwsCloudState } from '@/types/syntra';
 import {
   Terminal,
   CheckCircle2,
@@ -37,7 +37,7 @@ export const McpProtocolInspector: React.FC<McpProtocolInspectorProps> = ({
             MCP INSPECTOR
           </span>
           <span className="text-amazon-text_main font-bold text-xs tracking-tight">
-            Model Context Protocol & AWS Telemetry
+            ATLAS-MCP Protocol & AWS Cloud Telemetry
           </span>
           <span className="text-amazon-text_muted font-mono text-[11px] hidden md:inline">
             JSON-RPC 2.0 • Streamable HTTP

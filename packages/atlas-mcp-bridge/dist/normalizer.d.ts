@@ -1,7 +1,7 @@
 /**
  * @file normalizer.ts
- * @package @argon/mcp-iot-bridge
- * @description Transforms raw IoT payloads into normalized structures, MCP resources, and context-correlated urgency assessments.
+ * @package @atlas/mcp-iot-bridge
+ * @description Transforms raw IoT payloads into normalized structures, MCP resources, and context-correlated urgency assessments for SYNTRA.
  */
 import { RawIoTEvent, NormalizedIoTEvent, McpResourceRepresentation, ContextMemory, UrgencyAssessment } from './types';
 export declare function normalizeIoTEvent(raw: RawIoTEvent): NormalizedIoTEvent;

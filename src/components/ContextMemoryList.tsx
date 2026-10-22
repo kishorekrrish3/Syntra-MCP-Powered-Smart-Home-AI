@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ContextMemory } from '@/types/omniguard';
+import { ContextMemory } from '@/types/syntra';
 import {
   Plus,
   Clock,
@@ -87,7 +87,7 @@ export const ContextMemoryList: React.FC<ContextMemoryListProps> = ({
       <div className="flex items-center justify-between px-3 py-2 bg-amazon-card_hover border-b border-amazon-border_subtle">
         <div>
           <span className="text-amazon-text_main font-bold text-xs tracking-tight">
-            Personal Context Store
+            SYNTRA Context Store
           </span>
           <span className="text-amazon-text_muted text-[11px] ml-1.5">
             ({memories.length} Active Notes)

@@ -1,8 +1,8 @@
 "use strict";
 /**
  * @file normalizer.ts
- * @package @argon/mcp-iot-bridge
- * @description Transforms raw IoT payloads into normalized structures, MCP resources, and context-correlated urgency assessments.
+ * @package @atlas/mcp-iot-bridge
+ * @description Transforms raw IoT payloads into normalized structures, MCP resources, and context-correlated urgency assessments for SYNTRA.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.normalizeIoTEvent = normalizeIoTEvent;
@@ -134,7 +134,7 @@ function normalizeIoTEvent(raw) {
         summary,
         attributes,
         extractedEntities: entities,
-        mcpResourceUri: `omniguard://frontdoor/events/${raw.id}`,
+        mcpResourceUri: `syntra://frontdoor/events/${raw.id}`,
     };
 }
 function toMcpResource(event) {

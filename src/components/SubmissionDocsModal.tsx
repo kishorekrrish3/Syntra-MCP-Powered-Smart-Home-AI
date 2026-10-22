@@ -28,13 +28,13 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
     <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
       <div className="bg-amazon-surface_white border border-amazon-border_subtle rounded-[4px] max-w-4xl w-full h-[88vh] flex flex-col shadow-2xl overflow-hidden">
         {/* Amazon Global Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-amazon-primary_ink text-white">
+        <div className="flex items-center justify-between px-4 py-3 bg-[#0B0F19] border-b border-slate-800 text-white">
           <div className="flex items-center space-x-2">
-            <span className="bg-amazon-orange text-amazon-primary_ink font-black text-xs px-2 py-0.5 rounded-[2px]">
-              AMAZON
+            <span className="bg-cyan-500 text-slate-950 font-black text-xs px-2 py-0.5 rounded-[2px]">
+              SYNTRA
             </span>
             <span className="font-bold text-sm tracking-tight text-white">
-              OmniGuard — Official Hackathon Documentation & Rubric
+              Official Hackathon Documentation &amp; Evaluator Rubric (ATLAS-MCP)
             </span>
           </div>
 
@@ -117,7 +117,7 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                 System Architecture: Tool-Based Edge Intelligence Pipeline
               </h3>
               <p className="text-amazon-text_muted">
-                OmniGuard connects edge sensors, personal context notes, living-room displays, and generative cloud AI through the open <strong>Model Context Protocol (MCP)</strong>.
+                SYNTRA connects edge sensors, personal context notes, living-room displays, and generative cloud AI through the open <strong>Model Context Protocol (ATLAS-MCP)</strong>.
               </p>
 
               <div className="p-3 bg-amazon-background_light rounded-[4px] border border-amazon-border_subtle font-mono text-[11px] leading-snug text-amazon-text_main overflow-x-auto">
@@ -125,13 +125,13 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
   [ RING EDGE SENSORS / SIMULATOR ]
             │
             ▼  (Raw IoT JSON)
-  [ @argon/mcp-iot-bridge ] ───► Canonical Normalization & Validation
+  [ @atlas/mcp-iot-bridge ] ───► Canonical Normalization & Validation
             │
             ▼  (Normalized Event)
   [ PERSONAL CONTEXT STORE ] ──► Correlates with Bee Wearable Notes & Alexa Memos
             │
             ▼  (Urgency & Context Matches)
-  [ MODEL CONTEXT PROTOCOL SERVER ] ─── (Streamable HTTP / JSON-RPC 2.0)
+  [ ATLAS-MCP SERVER ENGINE ] ─── (Streamable HTTP / JSON-RPC 2.0)
             ├── ring_get_live_telemetry
             ├── ring_dispatch_hardware_action (Safety Gates Enforced)
             ├── firetv_push_pip_overlay
@@ -149,7 +149,7 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                 <div className="p-3 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle">
                   <div className="font-bold text-amazon-primary_ink mb-0.5">Standalone Open Source Package</div>
                   <p className="text-amazon-text_muted text-[11px]">
-                    <code>@argon/mcp-iot-bridge</code> is independently published under MIT license in <code>packages/argon-mcp-bridge</code> with 100% unit test coverage.
+                    <code>@atlas/mcp-iot-bridge</code> is independently published under MIT license in <code>packages/atlas-mcp-bridge</code> with 100% unit test coverage.
                   </p>
                 </div>
                 <div className="p-3 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle">
@@ -232,7 +232,7 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                 AWS Builder Mini Challenge Integration & Execution Proof
               </h3>
               <p className="text-amazon-text_muted">
-                OmniGuard implements a production-grade AWS integration featuring both <strong>Real Cloud Execution</strong> and <strong>Deterministic Offline Simulation</strong>.
+                SYNTRA implements a production-grade AWS integration featuring both <strong>Real Cloud Execution</strong> and <strong>Deterministic Offline Simulation</strong>.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
@@ -251,7 +251,7 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                   <div className="font-bold text-amazon-orange text-xs mb-1">High-Fidelity Simulation Mode</div>
                   <ul className="list-disc list-inside space-y-1 text-amazon-text_muted text-[11px]">
                     <li>Deterministic local reasoning engine matching Bedrock outputs</li>
-                    <li>Generates simulated S3 URIs (e.g. <code>s3://omniguard-incident-archives/...</code>)</li>
+                    <li>Generates simulated S3 URIs (e.g. <code>s3://syntra-incident-archives/...</code>)</li>
                     <li>Generates SHA-256 integrity checksums</li>
                     <li>Explicitly marks <code>isSimulated: true</code> in all UI badges and logs</li>
                     <li>Never claims false cloud connectivity</li>
@@ -277,14 +277,14 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                 <div className="p-2 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle flex space-x-2">
                   <span className="text-amazon-orange font-bold min-w-[70px]">0:20–0:55</span>
                   <div>
-                    <strong className="text-amazon-text_main">The Trigger:</strong> Courier drops damaged box. Ring simulator triggers event; OmniGuard correlates with Bee Wearable insulin note.
+                    <strong className="text-amazon-text_main">The Trigger:</strong> Courier drops damaged box. Ring simulator triggers event; SYNTRA correlates with Bee Wearable insulin note.
                   </div>
                 </div>
 
                 <div className="p-2 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle flex space-x-2">
                   <span className="text-amazon-orange font-bold min-w-[70px]">0:55–1:35</span>
                   <div>
-                    <strong className="text-amazon-text_main">MCP Intelligence:</strong> Show Protocol Inspector executing tools (<code>ring_get_live_telemetry</code>, <code>context_search_memories</code>, <code>aws_analyze_and_archive_incident</code>).
+                    <strong className="text-amazon-text_main">MCP Intelligence:</strong> Show Protocol Inspector executing tools (<code>ring_get_live_telemetry</code>, <code>context_search_memories</code>, <code>aws_analyze_and_archive_incident</code>) via ATLAS-MCP.
                   </div>
                 </div>
 
@@ -298,14 +298,14 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                 <div className="p-2 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle flex space-x-2">
                   <span className="text-amazon-orange font-bold min-w-[70px]">2:15–2:40</span>
                   <div>
-                    <strong className="text-amazon-text_main">Technical Proof:</strong> Streamable HTTP compliance, independent <code>@argon/mcp-iot-bridge</code> tests, S3 archive URI.
+                    <strong className="text-amazon-text_main">Technical Proof:</strong> Streamable HTTP compliance, independent <code>@atlas/mcp-iot-bridge</code> tests, S3 archive URI.
                   </div>
                 </div>
 
                 <div className="p-2 bg-amazon-card_hover rounded-[4px] border border-amazon-border_subtle flex space-x-2">
                   <span className="text-amazon-orange font-bold min-w-[70px]">2:40–3:00</span>
                   <div>
-                    <strong className="text-amazon-text_main">Closing Impact:</strong> Conclude on vision: "Your home doesn't just detect events. It understands what matters."
+                    <strong className="text-amazon-text_main">Closing Impact:</strong> Conclude on vision: "Your Home. One Intelligent Network."
                   </div>
                 </div>
               </div>
@@ -366,7 +366,7 @@ export const SubmissionDocsModal: React.FC<SubmissionDocsModalProps> = ({
                       <td className="p-2 font-bold text-amazon-text_main">6. Open Source Contribution</td>
                       <td className="p-2 text-amazon-success_green font-bold">9.5 / 10</td>
                       <td className="p-2 text-amazon-text_muted">
-                        Reusable MIT-licensed package <code>@argon/mcp-iot-bridge</code> in <code>packages/argon-mcp-bridge</code> with independent builds and tests.
+                        Reusable MIT-licensed package <code>@atlas/mcp-iot-bridge</code> in <code>packages/atlas-mcp-bridge</code> with independent builds and tests.
                       </td>
                     </tr>
                   </tbody>

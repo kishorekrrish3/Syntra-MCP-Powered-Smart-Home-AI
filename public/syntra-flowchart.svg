@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#070A11; font-family:'Amazon Ember', Arial, sans-serif;">
+  <defs>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0B0F19" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#00F0FF" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="1920" height="110" fill="#0B0F19" />
+  <rect x="0" y="108" width="1920" height="2" fill="#00F0FF" />
+  
+  <text x="60" y="58" font-size="34" font-weight="900" fill="#FFFFFF" letter-spacing="1.5">
+    SYNTRA <tspan fill="#00F0FF" font-size="28">— POWERED BY ATLAS-MCP</tspan>
+  </text>
+  <text x="60" y="90" font-size="16" fill="#94A3B8" font-weight="500">
+    Your Home. One Intelligent Network. • Build, Ship, Shape: Amazon Developer Hackathon
+  </text>
+
+  <rect x="1540" y="35" width="320" height="42" rx="4" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+  <circle cx="1565" cy="56" r="6" fill="#10B981" />
+  <text x="1582" y="62" font-size="14" fill="#FFFFFF" font-weight="700" font-family="monospace">
+    MCP 2024-11-05 • ACTIVE
+  </text>
+
+  <!-- Flow Step 1: Ring Edge Sensor -->
+  <g transform="translate(60, 160)" filter="url(#shadow)">
+    <rect width="360" height="340" rx="6" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="2" />
+    <rect x="0" y="0" width="360" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="70" height="22" rx="2" fill="#EF4444" />
+    <text x="30" y="30" font-size="11" font-weight="800" fill="#FFFFFF">1. TRIGGER</text>
+    <text x="105" y="31" font-size="15" font-weight="700" fill="#FFFFFF">Ring Edge Sensor</text>
+
+    <!-- Content -->
+    <rect x="20" y="65" width="320" height="150" rx="4" fill="#070A11" stroke="#1E293B" />
+    <text x="35" y="95" font-size="13" font-weight="700" fill="#00F0FF">• Video Doorbell Pro 2</text>
+    <text x="35" y="125" font-size="12" fill="#E2E8F0">Detection: Package Anomaly</text>
+    <text x="35" y="150" font-size="12" fill="#E2E8F0">Visual Status: <tspan fill="#EF4444" font-weight="700">Crushed Box (0.96)</tspan></text>
+    <text x="35" y="175" font-size="12" fill="#E2E8F0">Courier: BioPharma Express</text>
+    <text x="35" y="200" font-size="11" fill="#64748B" font-family="monospace">evt-ring-del-2026-1020</text>
+
+    <!-- Micro Badge -->
+    <rect x="20" y="235" width="320" height="75" rx="4" fill="#0F172A" stroke="#1E293B" />
+    <text x="35" y="260" font-size="12" font-weight="700" fill="#F59E0B">Problem Without SYNTRA:</text>
+    <text x="35" y="282" font-size="11" fill="#94A3B8">Treated as generic low-priority motion ping.</text>
+    <text x="35" y="300" font-size="11" fill="#94A3B8">Resident ignores alert; medicine spoils.</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="420" y1="330" x2="490" y2="330" stroke="#00F0FF" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Flow Step 2: ATLAS-MCP Bridge -->
+  <g transform="translate(500, 160)" filter="url(#shadow)">
+    <rect width="400" height="340" rx="6" fill="url(#cardGrad)" stroke="#00F0FF" stroke-width="2" />
+    <rect x="0" y="0" width="400" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="75" height="22" rx="2" fill="#00F0FF" />
+    <text x="28" y="30" font-size="11" font-weight="800" fill="#070A11">2. BRIDGE</text>
+    <text x="110" y="31" font-size="15" font-weight="700" fill="#FFFFFF">@atlas/mcp-iot-bridge</text>
+
+    <!-- Content -->
+    <rect x="20" y="65" width="360" height="255" rx="4" fill="#070A11" stroke="#1E293B" />
+    <text x="35" y="95" font-size="13" font-weight="700" fill="#38BDF8">Standalone MIT NPM Package</text>
+    <text x="35" y="125" font-size="12" fill="#E2E8F0">✓ Validates Schema (Zero Runtime Deps)</text>
+    <text x="35" y="155" font-size="12" fill="#E2E8F0">✓ Normalizes Canonical IoT Event</text>
+    <text x="35" y="185" font-size="12" fill="#E2E8F0">✓ Generates MCP Resource URI:</text>
+    <text x="45" y="210" font-size="11" fill="#00F0FF" font-family="monospace">syntra://frontdoor/events/del-101</text>
+    <text x="35" y="245" font-size="12" fill="#E2E8F0">✓ Extracts Entities:</text>
+    <text x="45" y="270" font-size="11" fill="#10B981" font-family="monospace">COURIER, PACKAGE, CONDITION, ACTION</text>
+    <text x="35" y="302" font-size="11" fill="#64748B">100% Tested • Independent Monorepo Workspace</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="900" y1="330" x2="970" y2="330" stroke="#00F0FF" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Flow Step 3: Context Correlation (Bee Wearable) -->
+  <g transform="translate(980, 160)" filter="url(#shadow)">
+    <rect width="420" height="340" rx="6" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="2" />
+    <rect x="0" y="0" width="420" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="85" height="22" rx="2" fill="#0284C7" />
+    <text x="28" y="30" font-size="11" font-weight="800" fill="#FFFFFF">3. CONTEXT</text>
+    <text x="120" y="31" font-size="15" font-weight="700" fill="#FFFFFF">Bee Wearable &amp; Notes Store</text>
+
+    <!-- Content -->
+    <rect x="20" y="65" width="380" height="255" rx="4" fill="#070A11" stroke="#1E293B" />
+    <text x="35" y="95" font-size="13" font-weight="700" fill="#38BDF8">Resident Memory Matched:</text>
+
+    <rect x="35" y="110" width="350" height="95" rx="4" fill="#0F172A" stroke="#0284C7" stroke-width="1" />
+    <text x="45" y="132" font-size="11" font-weight="700" fill="#F59E0B">SOURCE: Bee Wearable Voice Note (10:15 AM)</text>
+    <text x="45" y="154" font-size="11" fill="#E2E8F0">"Dr. Patel confirmed temperature-sensitive</text>
+    <text x="45" y="172" font-size="11" fill="#E2E8F0">insulin pens shipped via BioPharma Express.</text>
+    <text x="45" y="190" font-size="11" fill="#EF4444" font-weight="700">Must be refrigerated immediately."</text>
+
+    <text x="35" y="235" font-size="12" font-weight="700" fill="#10B981">Context Engine Escalation:</text>
+    <text x="35" y="260" font-size="12" fill="#E2E8F0">Urgency Level: <tspan fill="#EF4444" font-weight="800">EMERGENCY</tspan></text>
+    <text x="35" y="285" font-size="12" fill="#E2E8F0">Living Room TV Interruption: <tspan fill="#00F0FF" font-weight="700">REQUIRED</tspan></text>
+    <text x="35" y="308" font-size="11" fill="#64748B">Cross-device synchronization verified</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="1400" y1="330" x2="1470" y2="330" stroke="#00F0FF" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Flow Step 4: AWS Bedrock & S3 -->
+  <g transform="translate(1480, 160)" filter="url(#shadow)">
+    <rect width="380" height="340" rx="6" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="2" />
+    <rect x="0" y="0" width="380" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="70" height="22" rx="2" fill="#8B5CF6" />
+    <text x="28" y="30" font-size="11" font-weight="800" fill="#FFFFFF">4. CLOUD</text>
+    <text x="105" y="31" font-size="15" font-weight="700" fill="#FFFFFF">AWS Bedrock &amp; S3</text>
+
+    <!-- Content -->
+    <rect x="20" y="65" width="340" height="255" rx="4" fill="#070A11" stroke="#1E293B" />
+    <text x="35" y="95" font-size="13" font-weight="700" fill="#C084FC">Amazon Bedrock AI Inference</text>
+    <text x="35" y="120" font-size="11" fill="#E2E8F0">Model: anthropic.claude-3-5-sonnet</text>
+    <text x="35" y="140" font-size="11" fill="#E2E8F0">Latency: 142ms • Request: sim-bedrock-901</text>
+    <text x="35" y="165" font-size="11" fill="#94A3B8">Explains evidence, uncertainty &amp; safe action.</text>
+
+    <line x1="35" y1="185" x2="340" y2="185" stroke="#1E293B" stroke-width="1" />
+
+    <text x="35" y="212" font-size="13" font-weight="700" fill="#00F0FF">Amazon S3 Incident Archive</text>
+    <text x="35" y="235" font-size="11" fill="#E2E8F0">Bucket: syntra-incident-archives</text>
+    <text x="35" y="258" font-size="10" fill="#38BDF8" font-family="monospace">s3://.../incidents/2026-10-20/del.json</text>
+    <text x="35" y="282" font-size="11" fill="#10B981">Integrity: SHA-256 Validated</text>
+    <text x="35" y="305" font-size="11" fill="#64748B">Dual Mode: Real Cloud / Fallback</text>
+  </g>
+
+  <!-- Vertical Connecting Spine: Down to Steps 5 & 6 -->
+  <line x1="1190" y1="500" x2="1190" y2="580" stroke="#00F0FF" stroke-width="4" marker-end="url(#arrow)" />
+
+  <!-- Flow Step 5: Fire TV Living Room Interface -->
+  <g transform="translate(60, 600)" filter="url(#shadow)">
+    <rect width="900" height="420" rx="6" fill="url(#cardGrad)" stroke="#00F0FF" stroke-width="2" />
+    <rect x="0" y="0" width="900" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="75" height="22" rx="2" fill="#EF4444" />
+    <text x="28" y="30" font-size="11" font-weight="800" fill="#FFFFFF">5. ACTION</text>
+    <text x="110" y="31" font-size="15" font-weight="700" fill="#FFFFFF">Fire TV Living-Room Remote Experience (/firetv)</text>
+
+    <!-- TV Mockup Representation -->
+    <rect x="25" y="70" width="850" height="325" rx="4" fill="#000000" stroke="#1E293B" />
+    
+    <!-- TV Movie Artwork background -->
+    <rect x="35" y="80" width="460" height="260" rx="3" fill="#0F172A" />
+    <text x="50" y="115" font-size="18" font-weight="800" fill="#FFFFFF">Interstellar Odyssey (4K HDR)</text>
+    <rect x="50" y="130" width="160" height="26" rx="3" fill="#EF4444" />
+    <text x="58" y="148" font-size="12" font-weight="800" fill="#FFFFFF">PAUSED FOR EVENT</text>
+
+    <!-- Progress bar -->
+    <rect x="50" y="300" width="420" height="6" rx="3" fill="#334155" />
+    <rect x="50" y="300" width="190" height="6" rx="3" fill="#00F0FF" />
+    <text x="50" y="325" font-size="11" fill="#94A3B8" font-family="monospace">1h 12m / 2h 49m • Dolby Atmos 5.1</text>
+
+    <!-- The Slide-in Picture-in-Picture Card on Fire TV -->
+    <rect x="515" y="80" width="355" height="305" rx="4" fill="#FFFFFF" stroke="#00F0FF" stroke-width="2" />
+    <rect x="525" y="90" width="335" height="30" rx="2" fill="#FEE2E2" />
+    <circle cx="540" cy="105" r="5" fill="#EF4444" />
+    <text x="555" y="110" font-size="11" font-weight="800" fill="#EF4444">EMERGENCY SYNTRA ALERT</text>
+
+    <text x="530" y="145" font-size="15" font-weight="800" fill="#0F1111">Crushed Box: Insulin Delivery</text>
+    <text x="530" y="170" font-size="11" fill="#565959">Courier left damaged parcel in 85°F direct sunlight.</text>
+    <text x="530" y="188" font-size="11" fill="#565959">Correlates with urgent prescription note.</text>
+
+    <!-- Remote Navigation Action Buttons -->
+    <rect x="530" y="210" width="160" height="40" rx="4" fill="#00F0FF" stroke="#0284C7" stroke-width="2" />
+    <text x="548" y="235" font-size="13" font-weight="800" fill="#0B0F19">[Hold Courier]</text>
+
+    <rect x="700" y="210" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D5D9D9" stroke-width="1.5" />
+    <text x="735" y="235" font-size="12" font-weight="600" fill="#0F1111">Unlock Door</text>
+
+    <rect x="530" y="260" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D5D9D9" stroke-width="1.5" />
+    <text x="565" y="285" font-size="12" font-weight="600" fill="#0F1111">Floodlight</text>
+
+    <rect x="700" y="260" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#D5D9D9" stroke-width="1.5" />
+    <text x="730" y="285" font-size="12" font-weight="600" fill="#0F1111">Dismiss &amp; Play</text>
+
+    <rect x="530" y="315" width="330" height="28" rx="2" fill="#F8FAFC" stroke="#E2E8F0" />
+    <text x="545" y="333" font-size="10" font-weight="700" fill="#0284C7" font-family="monospace">
+      D-PAD REMOTE: Arrow Keys + [ENTER]
+    </text>
+  </g>
+
+  <!-- Flow Step 6: Full Protocol Inspector & MCP Dispatch -->
+  <g transform="translate(1000, 600)" filter="url(#shadow)">
+    <rect width="860" height="420" rx="6" fill="url(#cardGrad)" stroke="#1E293B" stroke-width="2" />
+    <rect x="0" y="0" width="860" height="48" rx="6" fill="#0F172A" />
+    <rect x="20" y="14" width="70" height="22" rx="2" fill="#10B981" />
+    <text x="28" y="30" font-size="11" font-weight="800" fill="#FFFFFF">6. AUDIT</text>
+    <text x="105" y="31" font-size="15" font-weight="700" fill="#FFFFFF">ATLAS-MCP Protocol Execution Trace (JSON-RPC 2.0)</text>
+
+    <!-- Code Block / Inspector view -->
+    <rect x="25" y="70" width="810" height="325" rx="4" fill="#070A11" stroke="#1E293B" />
+    
+    <text x="45" y="105" font-size="13" font-weight="700" fill="#00F0FF" font-family="monospace">
+      MCP Tools Dispatched During Incident:
+    </text>
+
+    <rect x="45" y="125" width="770" height="45" rx="3" fill="#0F172A" stroke="#1E293B" />
+    <text x="60" y="152" font-size="12" fill="#10B981" font-family="monospace">✓ tools/call → ring_get_live_telemetry</text>
+    <text x="560" y="152" font-size="11" fill="#94A3B8" font-family="monospace">lat: 18ms • status: SUCCESS</text>
+
+    <rect x="45" y="180" width="770" height="45" rx="3" fill="#0F172A" stroke="#1E293B" />
+    <text x="60" y="207" font-size="12" fill="#10B981" font-family="monospace">✓ tools/call → context_search_memories {"query": "insulin"}</text>
+    <text x="640" y="207" font-size="11" fill="#94A3B8" font-family="monospace">matches: 1</text>
+
+    <rect x="45" y="235" width="770" height="45" rx="3" fill="#0F172A" stroke="#1E293B" />
+    <text x="60" y="262" font-size="12" fill="#10B981" font-family="monospace">✓ tools/call → firetv_push_pip_overlay {"urgency": "EMERGENCY"}</text>
+    <text x="650" y="262" font-size="11" fill="#94A3B8" font-family="monospace">paused: true</text>
+
+    <rect x="45" y="290" width="770" height="45" rx="3" fill="#0F172A" stroke="#1E293B" />
+    <text x="60" y="317" font-size="12" fill="#10B981" font-family="monospace">✓ tools/call → aws_analyze_and_archive_incident</text>
+    <text x="540" y="317" font-size="11" fill="#94A3B8" font-family="monospace">Bedrock + S3 archive complete</text>
+
+    <text x="45" y="365" font-size="12" fill="#FCD34D" font-family="monospace">
+      Outcome: Intercom broadcasted • Incident archived • Entertainment restored on dismissal
+    </text>
+  </g>
+</svg>

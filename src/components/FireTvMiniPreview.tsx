@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FireTvState } from '@/types/omniguard';
+import { FireTvState } from '@/types/syntra';
 import {
   ExternalLink,
   Play,
@@ -28,7 +28,7 @@ export const FireTvMiniPreview: React.FC<FireTvMiniPreviewProps> = ({ fireTv }) 
             FIRE TV
           </span>
           <span className="text-amazon-text_main font-bold text-xs tracking-tight">
-            Living Room Display Mirror
+            SYNTRA Fire TV Sync Mirror
           </span>
           <span className="text-amazon-text_muted font-mono text-[11px] hidden sm:inline">
             16:9 HDMI Sync
