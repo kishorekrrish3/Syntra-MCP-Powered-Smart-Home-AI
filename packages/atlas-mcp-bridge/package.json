@@ -1,0 +1,28 @@
+{
+  "name": "@atlas/mcp-iot-bridge",
+  "version": "1.0.0",
+  "description": "Standardized bridge normalizing IoT edge events into Model Context Protocol (MCP) resources and agent tool context for SYNTRA",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "iot",
+    "syntra",
+    "atlas-mcp",
+    "ring",
+    "smart-home",
+    "agentic-ai",
+    "alexa"
+  ],
+  "author": "SYNTRA Architecture Team & ATLAS-MCP Contributors",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

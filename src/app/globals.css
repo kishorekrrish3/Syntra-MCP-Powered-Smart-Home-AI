@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-ink: #131921;
+  --secondary-ink: #232F3E;
+  --amazon-orange: #FF9900;
+  --accent-amber: #FEBD69;
+  --background-light: #EAEDED;
+  --surface-white: #FFFFFF;
+  --text-main: #0F1111;
+  --text-muted: #565959;
+  --link-blue: #007185;
+  --success-green: #007600;
+  --alert-red: #B12704;
+  --border-subtle: #D5D9D9;
+}
+
+body {
+  color: var(--text-main);
+  background: var(--background-light);
+  font-family: "Amazon Ember", Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Amazon standard link styling */
+a.amazon-link, button.amazon-link {
+  color: #007185;
+  text-decoration: none;
+}
+a.amazon-link:hover, button.amazon-link:hover {
+  color: #C7511F;
+  text-decoration: underline;
+}
+
+/* Amazon primary button */
+.btn-amazon-primary {
+  background: #FF9900;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+  color: #0F1111;
+  font-weight: 500;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  transition: all 0.15s ease-in-out;
+}
+.btn-amazon-primary:hover {
+  background: #FA8900;
+  border-color: #A88734;
+}
+
+/* Amazon secondary / buy now button */
+.btn-amazon-secondary {
+  background: #FFA41C;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+  color: #0F1111;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+.btn-amazon-secondary:hover {
+  background: #FA8900;
+}
+
+/* Amazon standard light button */
+.btn-amazon-white {
+  background: #FFFFFF;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+  color: #0F1111;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  transition: all 0.15s ease-in-out;
+}
+.btn-amazon-white:hover {
+  background: #F7FAFA;
+  border-color: #B5B9B9;
+}
+
+/* Card base */
+.amazon-card {
+  background: #FFFFFF;
+  border: 1px solid #D5D9D9;
+  border-radius: 4px;
+}
+
+/* Badge base */
+.amazon-badge {
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+/* Focus styles for Fire TV remote navigation */
+.remote-focused {
+  outline: 3px solid #FF9900 !important;
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.7) !important;
+  transform: scale(1.03);
+  border-radius: 8px !important;
+  transition: all 0.15s ease-out;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EAEDED;
+}
+::-webkit-scrollbar-thumb {
+  background: #888C8C;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #565959;
+}
