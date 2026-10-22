@@ -14,7 +14,7 @@ import {
 import { StateStore } from '@/lib/state-store';
 
 const PROTOCOL_VERSION = '2024-11-05';
-const SERVER_NAME = 'omniguard-argon-mcp';
+const SERVER_NAME = 'syntra-atlas-mcp';
 const SERVER_VERSION = '1.0.0';
 
 export async function OPTIONS() {

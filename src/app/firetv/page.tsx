@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { OmniGuardGlobalState } from '@/types/omniguard';
+import { SyntraGlobalState } from '@/types/syntra';
 import {
   Film,
   Play,
@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export default function FireTvLivingRoomPage() {
-  const [state, setState] = useState<OmniGuardGlobalState | null>(null);
+  const [state, setState] = useState<SyntraGlobalState | null>(null);
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [showVirtualRemote, setShowVirtualRemote] = useState(true);
   const [feedbackToast, setFeedbackToast] = useState<string | null>(null);
@@ -130,7 +130,7 @@ export default function FireTvLivingRoomPage() {
       <div className="h-screen w-screen bg-amazon-primary_ink flex items-center justify-center text-white font-sans text-xs">
         <div className="flex items-center space-x-2">
           <div className="w-3 h-3 rounded-full bg-amazon-orange animate-ping" />
-          <span>Connecting to Amazon Fire TV Display...</span>
+          <span>Connecting to SYNTRA Fire TV Display...</span>
         </div>
       </div>
     );
@@ -181,7 +181,7 @@ export default function FireTvLivingRoomPage() {
             ) : (
               <span className="flex items-center space-x-1.5 text-amazon-orange font-bold">
                 <Pause className="w-3.5 h-3.5 fill-amazon-orange" />
-                <span>PAUSED FOR GUARDIAN EVENT</span>
+                <span>PAUSED FOR SYNTRA EVENT</span>
               </span>
             )}
           </div>
@@ -205,7 +205,7 @@ export default function FireTvLivingRoomPage() {
               <div className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-amazon-alert_red" />
                 <span className="text-xs uppercase font-extrabold text-amazon-alert_red tracking-wide">
-                  {pip.urgency} • FRONT DOOR GUARDIAN EVENT
+                  {pip.urgency} • SYNTRA GUARDIAN EVENT
                 </span>
               </div>
               <span className="text-xs font-mono text-amazon-text_muted">
@@ -319,7 +319,7 @@ export default function FireTvLivingRoomPage() {
           </div>
 
           <div className="text-xs text-gray-300 bg-amazon-primary_ink/90 px-3 py-1.5 rounded-[4px] border border-gray-700">
-            OmniGuard Edge Surveillance: <span className="text-amazon-success_green font-bold">ARMED & ACTIVE</span>
+            SYNTRA Edge Surveillance: <span className="text-amazon-success_green font-bold">ARMED & ACTIVE</span>
           </div>
         </div>
       )}

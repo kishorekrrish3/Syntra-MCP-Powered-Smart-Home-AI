@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { EventEngine } from '@/lib/event-engine';
 import { StateStore } from '@/lib/state-store';
 
-describe('OmniGuard End-to-End Scenario Engine', () => {
+describe('SYNTRA End-to-End Scenario Engine', () => {
   beforeEach(() => {
     StateStore.resetToClean();
   });

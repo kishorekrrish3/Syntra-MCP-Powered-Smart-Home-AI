@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { OmniGuardGlobalState } from '@/types/omniguard';
+import { SyntraGlobalState } from '@/types/syntra';
 import { CameraCanvas } from '@/components/CameraCanvas';
 import { AlexaSimulatorPanel } from '@/components/AlexaSimulatorPanel';
 import { ScenarioControls } from '@/components/ScenarioControls';
@@ -30,7 +30,7 @@ import {
 } from 'lucide-react';
 
 export default function MissionControlDashboard() {
-  const [state, setState] = useState<OmniGuardGlobalState | null>(null);
+  const [state, setState] = useState<SyntraGlobalState | null>(null);
   const [showDocsModal, setShowDocsModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -85,10 +85,10 @@ export default function MissionControlDashboard() {
 
   if (!state) {
     return (
-      <div className="min-h-screen bg-amazon-background_light flex items-center justify-center font-sans text-xs text-amazon-text_muted">
+      <div className="min-h-screen bg-[#0B0F19] flex items-center justify-center font-sans text-xs text-slate-400">
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 rounded-full bg-amazon-orange animate-ping" />
-          <span>Connecting to Amazon OmniGuard Mission Control...</span>
+          <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-ping" />
+          <span>Connecting to SYNTRA Mission Control (Powered by ATLAS-MCP)...</span>
         </div>
       </div>
     );
@@ -98,36 +98,38 @@ export default function MissionControlDashboard() {
 
   return (
     <div className="min-h-screen bg-amazon-background_light text-amazon-text_main flex flex-col font-ember antialiased">
-      {/* 1. Amazon Global Primary Navigation Bar (#131921) */}
-      <header className="bg-amazon-primary_ink text-white px-4 py-2 flex items-center justify-between gap-3 text-xs">
-        {/* Amazon Logo & OmniGuard Brand */}
+      {/* 1. SYNTRA Primary Navigation Bar (#0B0F19 & #131921) */}
+      <header className="bg-[#0B0F19] border-b border-slate-800 text-white px-4 py-2.5 flex items-center justify-between gap-3 text-xs">
+        {/* SYNTRA Brand & ATLAS-MCP Signature */}
         <div className="flex items-center space-x-3 cursor-pointer">
           <div className="flex flex-col">
-            <div className="flex items-center space-x-1">
-              <span className="text-lg font-black tracking-tight text-white leading-none">
-                amazon
+            <div className="flex items-center space-x-1.5">
+              <span className="text-xl font-black tracking-wider text-white leading-none">
+                SYNTRA
               </span>
-              <span className="text-xs font-bold text-amazon-orange tracking-tight leading-none">
-                omniguard
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-[#00F0FF] border border-cyan-800 tracking-wider uppercase">
+                ATLAS-MCP
               </span>
             </div>
-            <span className="text-[10px] text-gray-400 font-medium">Home Guardian</span>
+            <span className="text-[10px] text-slate-400 font-medium tracking-tight mt-0.5">
+              Your Home. One Intelligent Network.
+            </span>
           </div>
 
-          {/* Deliver to Home */}
-          <div className="hidden md:flex items-center space-x-1 pl-3 text-left border-l border-gray-700">
-            <MapPin className="w-3.5 h-3.5 text-amazon-accent_amber" />
+          {/* Deliver to Home / Front Porch Hub */}
+          <div className="hidden md:flex items-center space-x-1 pl-3 text-left border-l border-slate-700">
+            <MapPin className="w-3.5 h-3.5 text-[#00F0FF]" />
             <div className="flex flex-col leading-tight">
-              <span className="text-[10px] text-gray-400">Deliver to</span>
-              <span className="font-bold text-[11px] text-white">Front Porch Hub</span>
+              <span className="text-[10px] text-slate-400">Connected Hub</span>
+              <span className="font-bold text-[11px] text-white">Front Porch & Living Room</span>
             </div>
           </div>
         </div>
 
-        {/* Global Search Bar (Amazon High-Conversion Search Standard) */}
+        {/* Global Search Bar (Alexa+ Natural Language Query) */}
         <form onSubmit={handleSearch} className="flex-1 max-w-2xl mx-2 hidden sm:flex">
-          <div className="flex w-full rounded-[4px] overflow-hidden focus-within:ring-2 focus-within:ring-amazon-orange">
-            <div className="bg-gray-100 text-amazon-text_main px-2.5 py-1.5 text-xs font-medium border-r border-gray-300 flex items-center cursor-pointer select-none">
+          <div className="flex w-full rounded-[4px] overflow-hidden focus-within:ring-2 focus-within:ring-[#00F0FF] border border-slate-700">
+            <div className="bg-[#1E293B] text-slate-200 px-2.5 py-1.5 text-xs font-medium border-r border-slate-700 flex items-center cursor-pointer select-none">
               All Devices
             </div>
             <input
@@ -135,12 +137,12 @@ export default function MissionControlDashboard() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search front-door events, ask Alexa+, or type a command..."
-              className="flex-1 px-3 py-1.5 text-xs text-amazon-text_main bg-white focus:outline-none"
+              className="flex-1 px-3 py-1.5 text-xs text-white bg-[#0F172A] focus:outline-none placeholder-slate-400"
             />
             <button
               type="submit"
-              className="bg-amazon-orange hover:bg-amazon-orange_hover px-4 py-1.5 text-amazon-primary_ink transition flex items-center justify-center"
-              title="Search"
+              className="bg-cyan-600 hover:bg-cyan-500 px-4 py-1.5 text-white transition flex items-center justify-center font-bold"
+              title="Query Alexa+ via ATLAS-MCP"
             >
               <Search className="w-4 h-4 font-bold" />
             </button>
@@ -150,14 +152,14 @@ export default function MissionControlDashboard() {
         {/* Right Navigation Links & Status */}
         <div className="flex items-center space-x-3">
           <div className="hidden lg:flex flex-col text-right leading-tight">
-            <span className="text-[10px] text-gray-400">MCP Protocol</span>
-            <span className="font-bold text-[11px] text-amazon-accent_amber">Streamable HTTP</span>
+            <span className="text-[10px] text-slate-400">MCP Protocol</span>
+            <span className="font-bold text-[11px] text-[#00F0FF]">Streamable HTTP</span>
           </div>
 
           <div className="hidden lg:flex flex-col text-right leading-tight">
-            <span className="text-[10px] text-gray-400">Cloud Engine</span>
+            <span className="text-[10px] text-slate-400">Cloud Engine</span>
             <span className="font-bold text-[11px] text-emerald-400">
-              {aws.mode === 'REAL_BEDROCK_S3' ? 'AWS Bedrock' : 'Simulated'}
+              {aws.mode === 'REAL_BEDROCK_S3' ? 'AWS Bedrock' : 'Simulated Bedrock'}
             </span>
           </div>
 
@@ -166,7 +168,7 @@ export default function MissionControlDashboard() {
             target="_blank"
             className="btn-amazon-white px-2.5 py-1 text-xs font-bold text-amazon-text_main flex items-center space-x-1"
           >
-            <Layers className="w-3.5 h-3.5 text-amazon-orange" />
+            <Layers className="w-3.5 h-3.5 text-indigo-600" />
             <span>Architecture Slide</span>
           </Link>
 
@@ -174,14 +176,14 @@ export default function MissionControlDashboard() {
             onClick={() => setShowDocsModal(true)}
             className="btn-amazon-white px-2.5 py-1 text-xs font-bold text-amazon-text_main flex items-center space-x-1"
           >
-            <FileText className="w-3.5 h-3.5 text-amazon-orange" />
+            <FileText className="w-3.5 h-3.5 text-indigo-600" />
             <span>Docs & Rubric</span>
           </button>
 
           <Link
             href="/firetv"
             target="_blank"
-            className="btn-amazon-primary px-3 py-1 text-xs font-bold text-amazon-primary_ink flex items-center space-x-1"
+            className="bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white px-3 py-1 text-xs font-bold rounded-[4px] flex items-center space-x-1 transition shadow-sm"
           >
             <Tv className="w-3.5 h-3.5" />
             <span>Fire TV</span>
@@ -190,22 +192,22 @@ export default function MissionControlDashboard() {
         </div>
       </header>
 
-      {/* 2. Amazon Sub-Navigation Bar (#232F3E) */}
-      <nav className="bg-amazon-secondary_ink text-white px-4 py-1.5 flex items-center justify-between text-xs font-medium border-t border-gray-700">
+      {/* 2. Sub-Navigation Bar (#0F172A) */}
+      <nav className="bg-[#0F172A] text-slate-300 px-4 py-1.5 flex items-center justify-between text-xs font-medium border-b border-slate-800">
         <div className="flex items-center space-x-4 overflow-x-auto">
-          <span className="flex items-center space-x-1 font-bold cursor-pointer hover:text-amazon-accent_amber">
+          <span className="flex items-center space-x-1 font-bold text-[#00F0FF] cursor-pointer">
             <Menu className="w-4 h-4" />
             <span>All Scenarios</span>
           </span>
-          <span className="text-gray-300 hover:text-white cursor-pointer">Ring Doorbell Pro 2</span>
-          <span className="text-gray-300 hover:text-white cursor-pointer">Bee Wearable Notes</span>
-          <span className="text-gray-300 hover:text-white cursor-pointer">Alexa+ Agent</span>
-          <span className="text-gray-300 hover:text-white cursor-pointer">AWS Bedrock & S3</span>
-          <span className="text-gray-300 hover:text-white cursor-pointer">@argon/mcp-iot-bridge (MIT)</span>
+          <span className="hover:text-white cursor-pointer">Ring Doorbell Pro 2</span>
+          <span className="hover:text-white cursor-pointer">Bee Wearable Notes</span>
+          <span className="hover:text-white cursor-pointer">Alexa+ Agent</span>
+          <span className="hover:text-white cursor-pointer">AWS Bedrock & S3</span>
+          <span className="text-cyan-400 font-mono hover:underline cursor-pointer">@atlas/mcp-iot-bridge (MIT)</span>
         </div>
 
-        <div className="hidden md:flex items-center space-x-2 text-[11px] font-mono text-amazon-accent_amber">
-          <span>HACKATHON BUILD, SHIP, SHAPE</span>
+        <div className="hidden md:flex items-center space-x-2 text-[11px] font-mono text-cyan-400">
+          <span>SYNTRA — POWERED BY ATLAS-MCP</span>
         </div>
       </nav>
 

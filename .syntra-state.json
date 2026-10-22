@@ -1,0 +1,301 @@
+{
+  "activeScenario": "scenario_4_reset",
+  "currentEvent": {
+    "eventId": "evt-ring-del-1792682597494",
+    "normalizedTimestamp": "2026-10-22T15:23:17.494Z",
+    "source": {
+      "deviceType": "ring_doorbell",
+      "deviceId": "ring-pro2-front-entry",
+      "location": "Front Door Porch",
+      "isSimulated": true
+    },
+    "category": "DELIVERY",
+    "severity": "CRITICAL",
+    "title": "Package Anomaly: Visible CRUSHED",
+    "summary": "A delivery by BioPharma Express shows signs of crushed. Immediate attention recommended.",
+    "attributes": {
+      "eventType": "package_anomaly",
+      "deviceType": "ring_doorbell",
+      "deviceId": "ring-pro2-front-entry",
+      "location": "Front Door Porch",
+      "confidence": 0.96,
+      "isSimulated": true,
+      "personDetected": true,
+      "courierName": "BioPharma Express",
+      "deliveryCompany": "BioPharma Logistics",
+      "packageCondition": "crushed",
+      "packageAnomalyDetected": true,
+      "anomalyDetails": "Front corner damaged, outer seal torn, temperature indicator exposed to sunlight",
+      "ambientLightLux": 1200,
+      "snapshotUri": "/synthetic-camera-stream/damaged-package.jpg"
+    },
+    "extractedEntities": [
+      {
+        "type": "DEVICE",
+        "value": "ring_doorbell:ring-pro2-front-entry",
+        "confidence": 1
+      },
+      {
+        "type": "COURIER",
+        "value": "BioPharma Express",
+        "confidence": 0.95
+      },
+      {
+        "type": "PACKAGE",
+        "value": "Package (crushed)",
+        "confidence": 0.9
+      },
+      {
+        "type": "CONDITION",
+        "value": "crushed",
+        "confidence": 0.92
+      }
+    ],
+    "mcpResourceUri": "syntra://frontdoor/events/evt-ring-del-1792682597494"
+  },
+  "rawEventHistory": [
+    {
+      "id": "evt-ring-del-1792682597494",
+      "timestamp": "2026-10-22T15:23:17.494Z",
+      "deviceType": "ring_doorbell",
+      "deviceId": "ring-pro2-front-entry",
+      "location": "Front Door Porch",
+      "eventType": "package_anomaly",
+      "simulated": true,
+      "confidence": 0.96,
+      "payload": {
+        "personDetected": true,
+        "courierName": "BioPharma Express",
+        "deliveryCompany": "BioPharma Logistics",
+        "packageCondition": "crushed",
+        "packageAnomalyDetected": true,
+        "anomalyDetails": "Front corner damaged, outer seal torn, temperature indicator exposed to sunlight",
+        "ambientLightLux": 1200,
+        "snapshotUri": "/synthetic-camera-stream/damaged-package.jpg"
+      }
+    }
+  ],
+  "hardware": {
+    "frontDoorLock": "LOCKED",
+    "floodlight": "OFF",
+    "siren": "OFF",
+    "cameraStreaming": true,
+    "courierIntercomActive": false
+  },
+  "fireTv": {
+    "playbackState": "PLAYING",
+    "currentMedia": {
+      "title": "Interstellar Odyssey (4K Ultra HD)",
+      "runtime": "2h 49m",
+      "progressPercent": 42,
+      "backdropUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&auto=format&fit=crop"
+    },
+    "pipOverlay": null,
+    "remoteNavigation": {
+      "focusedControlId": "btn-inspect",
+      "lastKeyPress": "NONE",
+      "lastKeyTimestamp": "2026-10-22T15:23:17.493Z"
+    }
+  },
+  "memories": [
+    {
+      "id": "mem-bee-001",
+      "timestamp": "2026-10-22T11:23:12.200Z",
+      "source": "bee_wearable",
+      "category": "medical",
+      "content": "Bee Voice Note: Dr. Patel confirmed my temperature-controlled rapid-acting insulin pens were shipped via BioPharma Express. Arriving this afternoon between 2-4 PM. Needs immediate refrigeration—cannot sit in sunlight.",
+      "tags": [
+        "medical",
+        "insulin",
+        "temperature",
+        "urgent",
+        "delivery",
+        "biopharma"
+      ],
+      "relevanceScore": 1
+    },
+    {
+      "id": "mem-alexa-002",
+      "timestamp": "2026-10-22T12:23:12.212Z",
+      "source": "alexa_notes",
+      "category": "visitor",
+      "content": "Alexa Voice Memo: Uncle Dave called to say he will stop by around 3:30 PM to drop off spare car keys for the weekend road trip. He has authorized access.",
+      "tags": [
+        "visitor",
+        "family",
+        "keys",
+        "uncle dave",
+        "access"
+      ],
+      "relevanceScore": 1
+    },
+    {
+      "id": "mem-bee-003",
+      "timestamp": "2026-10-21T15:23:12.212Z",
+      "source": "bee_wearable",
+      "category": "security",
+      "content": "Bee Transcribed Meeting: Neighborhood watch alert posted yesterday regarding suspicious nighttime loitering and package scouting on Elm & Maple streets.",
+      "tags": [
+        "security",
+        "neighborhood",
+        "loitering",
+        "theft",
+        "suspicious"
+      ],
+      "relevanceScore": 1
+    }
+  ],
+  "aws": {
+    "mode": "SIMULATED_LOCAL",
+    "configuredRegion": "us-east-1",
+    "configuredModel": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "s3Bucket": "syntra-incident-archives",
+    "hasCredentials": false,
+    "lastInference": {
+      "executedAt": "2026-10-22T15:23:17.497Z",
+      "model": "anthropic.claude-3-5-sonnet-20241022-v2:0 (Simulated Deterministic Engine)",
+      "latencyMs": 123,
+      "reasoning": "[SYNTRA Bedrock Analysis - Evidence Correlated]\n• Detected: Package Anomaly: Visible CRUSHED at Front Door Porch.\n• Context Correlation: Resident wearable record indicates a temperature-sensitive prescription (Insulin Rapid-Acting) delivered today.\n• Evidence: Package condition \"crushed\" compromises thermal integrity in direct sunlight.\n• Uncertainty: Visual anomaly detected on outer box; internal vial state unverified without physical inspection.\n• Action: Interrupted living-room media, dispatched courier intercom hold, and prompted resident to retrieve immediately.",
+      "confidence": 0.94,
+      "tokensUsed": 312,
+      "isSimulated": true,
+      "requestId": "sim-bedrock-1792682597497"
+    },
+    "lastArchive": {
+      "archivedAt": "2026-10-22T15:23:17.497Z",
+      "s3Uri": "s3://syntra-incident-archives/2026-10-22/delivery/evt-ring-del-1792682597494.json",
+      "recordSize": 1420,
+      "isSimulated": true,
+      "checksum": "sha256:sim-6576742d72696e67"
+    }
+  },
+  "protocolLogs": [
+    {
+      "id": "proto-init-1",
+      "timestamp": "2026-10-22T15:23:17.493Z",
+      "transport": "STREAMABLE_HTTP",
+      "direction": "NOTIFICATION",
+      "method": "notifications/initialized",
+      "params": {
+        "protocolVersion": "2024-11-05",
+        "server": "syntra-atlas-mcp"
+      },
+      "result": {
+        "status": "ONLINE"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "time-1792682597520-tyua",
+      "timestamp": "2026-10-22T15:23:17.520Z",
+      "actor": "RESIDENT",
+      "action": "ALL_CLEAR_RESTORED",
+      "summary": "All alerts dismissed. Entertainment playback resumed. Hardware returned to standby.",
+      "severity": "INFO"
+    },
+    {
+      "id": "time-1792682597502-nqjm",
+      "timestamp": "2026-10-22T15:23:17.502Z",
+      "actor": "FIRE_TV",
+      "action": "MEDIA_PAUSED_PIP_PUSHED",
+      "summary": "Living room display interrupted with EMERGENCY Picture-in-Picture alert",
+      "severity": "WARNING"
+    },
+    {
+      "id": "time-1792682597500-mds3",
+      "timestamp": "2026-10-22T15:23:17.500Z",
+      "actor": "BEDROCK_AI",
+      "action": "INFERENCE_SIMULATED",
+      "summary": "Analyzed with anthropic.claude-3-5-sonnet-20241022-v2:0 (Simulated Deterministic Engine) (123ms)",
+      "severity": "INFO",
+      "details": {
+        "requestId": "sim-bedrock-1792682597497",
+        "s3Archive": "s3://syntra-incident-archives/2026-10-22/delivery/evt-ring-del-1792682597494.json"
+      }
+    },
+    {
+      "id": "time-1792682597496-cwkz",
+      "timestamp": "2026-10-22T15:23:17.497Z",
+      "actor": "ATLAS_BRIDGE",
+      "action": "CONTEXT_CORRELATION",
+      "summary": "Urgency assessed as EMERGENCY: High risk detected: Event (Package Anomaly: Visible CRUSHED) correlates directly with user context (1 relevant memory matches).",
+      "severity": "CRITICAL",
+      "details": {
+        "matches": [
+          {
+            "memoryId": "mem-bee-001",
+            "memoryContent": "Bee Voice Note: Dr. Patel confirmed my temperature-controlled rapid-acting insulin pens were shipped via BioPharma Express. Arriving this afternoon between 2-4 PM. Needs immediate refrigeration—cannot sit in sunlight.",
+            "relevanceReason": "Memory mentions temperature/medical keyword: \"insulin\" on damaged package; Memory mentions temperature/medical keyword: \"medical\" on damaged package; Memory mentions temperature/medical keyword: \"temperature\" on damaged package; Memory mentions temperature/medical keyword: \"pharma\" on damaged package; Memory mentions temperature/medical keyword: \"urgent\" on damaged package; Memory notes expected courier: \"biopharma express\""
+          }
+        ],
+        "interruptionRequired": true
+      }
+    },
+    {
+      "id": "time-1792682597496-scej",
+      "timestamp": "2026-10-22T15:23:17.496Z",
+      "actor": "RING_SENSOR",
+      "action": "EVENT_INGESTED",
+      "summary": "Package Anomaly: Visible CRUSHED detected at Front Door Porch",
+      "severity": "CRITICAL",
+      "details": {
+        "eventId": "evt-ring-del-1792682597494",
+        "deviceType": "ring_doorbell"
+      }
+    },
+    {
+      "id": "time-init-0",
+      "timestamp": "2026-10-22T15:23:17.493Z",
+      "actor": "ATLAS_BRIDGE",
+      "action": "SYSTEM_BOOT",
+      "summary": "SYNTRA ATLAS-MCP edge bridge initialized. Ready for Ring telemetry and Alexa+ agent requests.",
+      "severity": "INFO"
+    }
+  ],
+  "agentConversation": [
+    {
+      "id": "msg-welcome",
+      "sender": "alexa",
+      "text": "SYNTRA Guardian online. Powered by ATLAS-MCP. Actively monitoring your front door sensors and cross-referencing events with your personal context memories.",
+      "timestamp": "2026-10-22T15:23:17.493Z"
+    },
+    {
+      "id": "msg-1792682597503",
+      "sender": "alexa",
+      "text": "High risk detected: Event (Package Anomaly: Visible CRUSHED) correlates directly with user context (1 relevant memory matches).\n\nEvidence Summary:\n[SYNTRA Bedrock Analysis - Evidence Correlated]\n• Detected: Package Anomaly: Visible CRUSHED at Front Door Porch.\n• Context Correlation: Resident wearable record indicates a temperature-sensitive prescription (Insulin Rapid-Acting) delivered today.\n• Evidence: Package condition \"crushed\" compromises thermal integrity in direct sunlight.\n• Uncertainty: Visual anomaly detected on outer box; internal vial state unverified without physical inspection.\n• Action: Interrupted living-room media, dispatched courier intercom hold, and prompted resident to retrieve immediately.",
+      "timestamp": "2026-10-22T15:23:17.503Z",
+      "toolCalls": [
+        {
+          "toolName": "ring_get_live_telemetry",
+          "arguments": {
+            "eventId": "evt-ring-del-1792682597494"
+          },
+          "result": {
+            "location": "Front Door Porch",
+            "severity": "CRITICAL"
+          }
+        },
+        {
+          "toolName": "context_search_memories",
+          "arguments": {
+            "query": "Package Anomaly: Visible CRUSHED"
+          },
+          "result": {
+            "matchedCount": 1
+          }
+        },
+        {
+          "toolName": "firetv_push_pip_overlay",
+          "arguments": {
+            "urgency": "EMERGENCY",
+            "eventId": "evt-ring-del-1792682597494"
+          },
+          "result": {
+            "success": true
+          }
+        }
+      ]
+    }
+  ]
+}

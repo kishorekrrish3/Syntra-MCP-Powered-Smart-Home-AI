@@ -6,7 +6,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { EventEngine } from '@/lib/event-engine';
-import { ScenarioId, RawIoTEvent } from '@/types/omniguard';
+import { ScenarioId, RawIoTEvent } from '@/types/syntra';
 
 export async function POST(request: NextRequest) {
   try {

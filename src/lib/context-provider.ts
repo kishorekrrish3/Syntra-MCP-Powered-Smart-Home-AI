@@ -3,7 +3,7 @@
  * @description Ingestion and retrieval engine for personal context memories (Bee Wearable, Alexa Notes, Fixtures).
  */
 
-import { ContextMemory } from '@/types/omniguard';
+import { ContextMemory } from '@/types/syntra';
 
 export const DEFAULT_CONTEXT_MEMORIES: ContextMemory[] = [
   {

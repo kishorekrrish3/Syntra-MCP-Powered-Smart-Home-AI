@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
       // General agent response with Bedrock or memory search
       const memRes = await McpServerEngine.callTool('context_search_memories', { query });
       executedTools.push({ toolName: 'context_search_memories', arguments: { query }, result: memRes });
-      alexaReply = `I checked your home context regarding "${query}". OmniGuard is monitoring all front door events, personal notes, and Fire TV sessions.`;
+      alexaReply = `I checked your home context regarding "${query}". SYNTRA is monitoring all front door events, personal notes, and Fire TV sessions.`;
     }
 
     // Record Alexa response in conversation

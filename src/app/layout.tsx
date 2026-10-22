@@ -2,11 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Amazon OmniGuard — Context-Aware Home Guardian (Argon-MCP)',
+  title: 'SYNTRA: MCP-Powered Smart Home AI — Powered by ATLAS-MCP',
   description:
-    'Amazon Global developer ecosystem bridge for Alexa+, Ring, Fire TV, and AWS Bedrock.',
+    'Context-aware smart-home orchestration connecting IoT events, wearable memory, multimodal AI, and Fire TV through the Model Context Protocol.',
   icons: {
     icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'SYNTRA — Powered by ATLAS-MCP | Your Home. One Intelligent Network.',
+    description:
+      'Context-aware smart-home orchestration connecting IoT events, wearable memory, multimodal AI, and Fire TV through the Model Context Protocol.',
+    siteName: 'SYNTRA Smart Home AI',
   },
 };
 

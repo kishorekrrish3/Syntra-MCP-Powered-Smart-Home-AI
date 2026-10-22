@@ -7,7 +7,7 @@ describe('Model Context Protocol (MCP) Server Compliance', () => {
     StateStore.resetToClean();
   });
 
-  it('exposes all mandatory OmniGuard MCP tools with valid schemas', () => {
+  it('exposes all mandatory SYNTRA MCP tools with valid schemas', () => {
     expect(MCP_TOOLS.length).toBeGreaterThanOrEqual(6);
     const toolNames = MCP_TOOLS.map(t => t.name);
 
@@ -68,19 +68,24 @@ describe('Model Context Protocol (MCP) Server Compliance', () => {
   });
 
   it('reads MCP resources by URI with valid JSON payloads', () => {
-    const telemetryRes = McpServerEngine.readResource('omniguard://frontdoor/telemetry');
+    const telemetryRes = McpServerEngine.readResource('syntra://frontdoor/telemetry');
     expect(telemetryRes.mimeType).toBe('application/json');
     const parsedTelemetry = JSON.parse(telemetryRes.text);
     expect(parsedTelemetry.device).toBe('ring_doorbell');
 
-    const sessionRes = McpServerEngine.readResource('omniguard://livingroom/session');
+    const sessionRes = McpServerEngine.readResource('syntra://livingroom/session');
+    expect(sessionRes.mimeType).toBe('application/json');
     const parsedSession = JSON.parse(sessionRes.text);
     expect(parsedSession.playbackState).toBe('PLAYING');
+
+    // Also verify backward-compatibility with legacy omniguard:// scheme
+    const legacyRes = McpServerEngine.readResource('omniguard://frontdoor/telemetry');
+    expect(legacyRes.mimeType).toBe('application/json');
   });
 
   it('generates structured prompts for frontdoor_triage and trusted_visitor_handling', () => {
     const triagePrompt = McpServerEngine.getPrompt('frontdoor_triage', { eventSummary: 'Damaged package' });
-    expect(triagePrompt.messages[0].content.text).toContain('OmniGuard Alexa+ agent');
+    expect(triagePrompt.messages[0].content.text).toContain('SYNTRA Alexa+ agent');
     expect(triagePrompt.messages[0].content.text).toContain('Damaged package');
 
     const visitorPrompt = McpServerEngine.getPrompt('trusted_visitor_handling', { visitorName: 'Uncle Dave' });
